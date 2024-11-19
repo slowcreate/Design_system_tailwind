@@ -1,11 +1,15 @@
 ---
+const { url="#", cardimage="", cardimagealt="", 
+badgenyt="false", badgerabat="false", badgerabatsats="", badgefaapladser="false", 
+holdnavn="", tidspunkt="", aldersgruppe="", niveau="", pladserpaaholdet="", lokale="", holdbeskrivelse="", 
+underviserfoto="", underviserfotoalt="", undervisernavn="", underviserinfo="" } = Astro.props; 
 ---
 
 <article class="card border-blue-500 border-2 @container">
-    <a href="" class="flex flex-col justify-between h-full">
+    <a href={url} class="flex flex-col justify-between h-full">
         <section class="danseholdheader mb-xs relative">
-            <img src="img1.jpeg" alt="Et par der danser ballroom" class="object-cover h-9xl w-full bg-red-200">
-            <div class="badge absolute top-xs bg-blue-500 p-xs text-white">Nyt hold!</div>
+            <img src={cardimage} alt={cardimagealt} class="object-cover h-9xl w-full bg-red-200">
+           {(badgenyt === "true") && <div class="badge absolute top-xs bg-blue-500 p-xs text-white">Nyt hold!</div>} 
             <div class="badge absolute top-xs bg-red-500 p-xs right-[0] text-white"><span>10% rabat</span></div>
             <div class="badge absolute bottom-xs bg-yellow-500 p-xs right-[0] text-black">Kun få pladser tilbage!</div>
         </section>
